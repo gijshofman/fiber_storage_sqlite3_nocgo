@@ -96,7 +96,7 @@ func Test_SQLite3_Delete(t *testing.T) {
 	utils.AssertEqual(t, true, len(result) == 0)
 }
 
-func Test_SQLite3_Clear(t *testing.T) {
+func Test_SQLite3_Reset(t *testing.T) {
 	var (
 		val = []byte("doe")
 	)
@@ -120,6 +120,5 @@ func Test_SQLite3_Clear(t *testing.T) {
 }
 
 func Test_SQLite3_Close(t *testing.T) {
-	err := testStore.Close()
-	utils.AssertEqual(t, nil, err)
+	utils.AssertEqual(t, nil, testStore.Close())
 }
